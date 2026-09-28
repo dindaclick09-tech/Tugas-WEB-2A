@@ -5,11 +5,16 @@ body{
     font-size: 16px;
 }
 
+*{
+    box-sizing: border-box;
+}
+
 /* membuat kanvas putih di tengah */
 .container{
     background-color: white;
     margin: 0px auto;
     width: 800px;
+    max-width: 100%;
 }
 
 /* mengatur jarak dalam header */
@@ -55,9 +60,53 @@ body{
 /*untuk css banner*/
 .banner {
     height: 300px;
-    background-image: url(img/banner.jpg) ;
+    /*backgound-color: skyblue;*/
+    /* memberikan file gambar sebagai latar belakang */
+    background-image: url('../img/images.jpg');
+    /* mengatur ukuran gambar latar belakang */
     background-size : cover ;
+    /* mengatur posisi gambar latar belakang */
     background-position : 0px - 150px ;
+    /* mengatur garis tepi tebal jenis warna */
     border-top : 5px solid navy ;
-    border-bottom : 5 px solid skyblue
+    border-bottom : 5px solid skyblue;
+}
+
+/*untuk isi*/
+.isi {
+    padding: 20px;
+}
+ 
+.isi h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+ 
+.isi .penulis {
+    font-size: 14px;
+    /*agar agak naik*/
+    margin-top: -10px;
+}
+ 
+.isi .penulis a {
+    text-decoration: none;
+    color: skyblue;
+}
+ 
+.isi p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/*untuk footer*/
+.footer {
+    background-color: navy;
+    height: 50px;
+    padding: 2px;
+}
+ 
+.footer .copyright {
+    font-size: 16px;
+    color: white;
+    text-align: center;
 }
