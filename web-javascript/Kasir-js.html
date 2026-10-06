@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KASIR-JS</title>
+</head>
+<body>
+    <h1>Tugas Praktikum - Kasir JS</h1>
+
+    <script type="text/javascript">
+        // 1. Input Data Menggunakan Prompt
+        let namaBarang = prompt("Masukkan Nama Barang:");
+        let hargaBarang = parseFloat(prompt("Masukkan Harga Barang:"));
+        let qty = parseInt(prompt("Masukkan Jumlah Beli (qty):"));
+
+        // 2. Hitung Total Belanja
+        let totalBelanja = hargaBarang * qty;
+        let diskon = 0;
+
+        // 3. Cek Syarat Diskon (Lebih dari 50.000 dapat diskon 10%)
+        if (totalBelanja > 50000) {
+            diskon = totalBelanja * 0.10;
+        }
+
+        // 4. Hitung Total Pembayaran Akhir
+        let totalPembayaran = totalBelanja - diskon;
+
+        // 5. Tampilkan Struk Belanja Menggunakan document.write
+        document.write("<pre>");
+        document.write("Struk Belanja<br>");
+        document.write("Nama barang: " + namaBarang + "<br>");
+        document.write("Harga: " + hargaBarang + "<br>");
+        document.write("Jumlah beli: " + qty + "<br>");
+        document.write("Total belanja: " + totalBelanja + "<br>");
+        document.write("Diskon: " + diskon + "<br>");
+        document.write("Total pembayaran: " + totalPembayaran + "<br>");
+        document.write("------------------------------");
+        document.write("</pre>");
+    </script>
+</body>
+</html>
