@@ -21,21 +21,25 @@ function calculateTotal() {
 }
 
 // 2. Fitur Live Filter / Search Proyek
-document.getElementById('searchProject').addEventListener('keyup', function () {
-    const filterValue = this.value.toLowerCase();
-    const projectCards = document.querySelectorAll('.project-card');
+const searchProject = document.getElementById('searchProject');
 
-    projectCards.forEach(card => {
-        const title = card.getAttribute('data-title').toLowerCase();
-        const tech = card.getAttribute('data-tech').toLowerCase();
+if (searchProject) {
+    searchProject.addEventListener('keyup', function () {
+        const filterValue = this.value.toLowerCase();
+        const projectCards = document.querySelectorAll('.project-card');
 
-        if (title.includes(filterValue) || tech.includes(filterValue)) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
+        projectCards.forEach(card => {
+            const title = card.getAttribute('data-title').toLowerCase();
+            const tech = card.getAttribute('data-tech').toLowerCase();
+
+            if (title.includes(filterValue) || tech.includes(filterValue)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
     });
-});
+}
 
 // 3. Fitur Dark Mode Toggle (Manipulasi DOM)
 const darkModeToggle = document.getElementById('darkModeToggle');

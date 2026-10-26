@@ -109,6 +109,30 @@ body.dark-mode .card {
     border-color: #333f38 !important;
 }
 
+body.dark-mode main .text-dark {
+    color: #f4f6f4 !important;
+}
+
+body.dark-mode main .text-muted,
+body.dark-mode main .text-secondary {
+    color: #b8c3bd !important;
+}
+
+body.dark-mode main .text-success {
+    color: #a8c5b5 !important;
+}
+
+body.dark-mode .accordion-item,
+body.dark-mode .accordion-button {
+    background-color: #242c28 !important;
+    color: #f4f6f4 !important;
+    border-color: #333f38 !important;
+}
+
+body.dark-mode .accordion-button::after {
+    filter: invert(1);
+}
+
 body.dark-mode .list-group-item {
     background-color: #242c28 !important;
     color: #f4f6f4 !important;
