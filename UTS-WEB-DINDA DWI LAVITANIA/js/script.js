@@ -79,3 +79,26 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 
     this.reset();
 });
+// --- Efek Fade-In Hanya Saat Disebut / Discroll (Scroll Reveal) ---
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll(".fade-in-section");
+
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.15 // Animasi mulai berjalan saat section terlihat 15% di layar
+    };
+
+    const observer = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // Animasi hanya berjalan sekali per section
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});

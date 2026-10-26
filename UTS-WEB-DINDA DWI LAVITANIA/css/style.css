@@ -262,3 +262,15 @@ body.dark-mode #darkModeToggle {
     color: #ffffff;
     border-color: #ffffff;
 }
+/* --- Konfigurasi Fade-In On-Scroll --- */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Kelas ini otomatis ditambahkan oleh JavaScript pas bagiannya digeser */
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
