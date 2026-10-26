@@ -1,15 +1,50 @@
-/* --- Tema Utama: Sage Green & Earthy --- */
-:root {
-    --sage-primary: #587d71;
-    --sage-dark: #2c3e35;
-    --sage-bg: #f4f6f4;
-    --sage-card: #ffffff;
+/* --- Hero Section Styling Terbaru--- */
+#hero {
+    /* Gradasi warna sage green ke hijau mint lembut */
+    background: linear-gradient(135deg, #587d71 0%, #769a8e 60%, #9cb3a8 100%) !important;
+    position: relative;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
 }
 
-body {
-    background-color: var(--sage-bg);
-    color: var(--sage-dark);
-    transition: background-color 0.3s, color 0.3s;
+/* Bingkai Foto Profil yang Lebih Stand Out */
+#hero img {
+    border: 4px solid rgba(255, 255, 255, 0.85) !important;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25) !important;
+    transition: transform 0.3s ease;
+}
+
+#hero img:hover {
+    transform: scale(1.05); /* Sedikit membesar saat disorot */
+}
+
+/* Judul & Teks Hero */
+#hero h1 {
+    font-size: 2.8rem;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+#hero p.lead {
+    font-weight: 300;
+    opacity: 0.95;
+    font-size: 1.15rem;
+}
+
+/* Tombol 'Lihat Proyek' */
+#hero .btn-light {
+    background-color: #ffffff !important;
+    color: #3b584e !important;
+    border-radius: 50px !important; /* Bentuk kapsul yang manis */
+    padding: 12px 30px !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+#hero .btn-light:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+    background-color: #f8f9fa !important;
 }
 
 /* Kustomisasi Navbar & Tombol Utama */
