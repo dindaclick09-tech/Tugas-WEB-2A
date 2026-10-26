@@ -110,3 +110,48 @@ body.dark-mode .form-select {
 body.dark-mode .form-control::placeholder {
     color: #8fa398;
 }
+/* --- Animasi Khusus Bagian Selamat Datang (Hero Section) --- */
+
+/* Efek Muncul & Geser ke Atas (Fade In Up) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Terapkan animasi ke elemen-elemen di dalam Hero */
+#hero img {
+    animation: fadeInUp 1s ease-out 0.2s; /* Foto muncul duluan */
+    animation-fill-both: backwards;
+}
+
+#hero .badge {
+    animation: fadeInUp 1s ease-out 0.4s;
+    animation-fill-mode: backwards;
+}
+
+#hero h1 {
+    animation: fadeInUp 1s ease-out 0.6s; /* Judul 'Selamat Datang' muncul berikutnya */
+    animation-fill-mode: backwards;
+}
+
+#hero p.lead {
+    animation: fadeInUp 1s ease-out 0.8s; /* Sub-teks menyusul */
+    animation-fill-mode: backwards;
+}
+
+#hero a.btn {
+    animation: fadeInUp 1s ease-out 1s; /* Tombol 'Lihat Proyek' muncul terakhir */
+    animation-fill-mode: backwards;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efek hover interaktif saat tombol disentuh kursor */
+#hero a.btn:hover {
+    transform: scale(1.08); /* Sedikit membesar / membal */
+}
