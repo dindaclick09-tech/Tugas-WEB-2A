@@ -1,7 +1,22 @@
-/* --- Hero Section Styling Terbaru--- */
+/* --- Animasi Background Bergerak (Animated Gradient) untuk Hero Section --- */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 #hero {
-    /* Gradasi warna sage green ke hijau mint lembut */
-    background: linear-gradient(135deg, #587d71 0%, #769a8e 60%, #9cb3a8 100%) !important;
+    /* Membuat ukuran background lebih besar dari area aslinya agar bisa bergeser */
+    background: linear-gradient(135deg, #4d6d63, #587d71, #769a8e, #8ca89e) !important;
+    background-size: 300% 300% !important;
+    /* Menjalankan animasi selama 10 detik secara berulang-ulang */
+    animation: gradientAnimation 10s ease infinite;
     position: relative;
     padding-top: 5rem !important;
     padding-bottom: 5rem !important;
@@ -127,7 +142,7 @@ body.dark-mode .form-control::placeholder {
 /* Terapkan animasi ke elemen-elemen di dalam Hero */
 #hero img {
     animation: fadeInUp 1s ease-out 0.2s; /* Foto muncul duluan */
-    animation-fill-both: backwards;
+    animation-fill-mode: backwards;
 }
 
 #hero .badge {
@@ -154,4 +169,96 @@ body.dark-mode .form-control::placeholder {
 /* Efek hover interaktif saat tombol disentuh kursor */
 #hero a.btn:hover {
     transform: scale(1.08); /* Sedikit membesar / membal */
+}
+/* --- Palet Warna Sage Green & Krem Hangat --- */
+:root {
+    --sage-primary: #587d71;
+    --sage-dark: #2c3e35;
+    --sage-bg: #f5f2eb;       /* Warna Krem Warm Beige untuk Latar Belakang Utama */
+    --cream-card: #fcfbfa;     /* Warna Krem Sangat Halus untuk Kartu/Card */
+    --cream-accent: #eae3d2;   /* Warna Krem Aksen untuk Border/Badge */
+}
+
+/* Mengubah latar belakang halaman menjadi Krem Soft */
+body {
+    background-color: var(--sage-bg);
+    color: var(--sage-dark);
+}
+
+/* Memperbarui Kartu Proyek/Kontak dengan Sentuhan Krem */
+.card, 
+.project-card .card {
+    background-color: var(--cream-card) !important;
+    border: 1px solid var(--cream-accent) !important;
+}
+
+/* Badge 'Halo, Selamat Datang!' dan Tag dengan Nuansa Krem */
+#hero .badge {
+    background-color: #f7f3e9 !important;
+    color: #4a6258 !important;
+    border: 1px solid #e2dac8;
+}
+
+/* Tombol 'Lihat Proyek' dengan Sentuhan Krem Lembut */
+#hero .btn-light {
+    background-color: #f9f6f0 !important;
+    color: #3b584e !important;
+    border: 1px solid #e8e0d0 !important;
+    border-radius: 50px !important;
+    padding: 12px 30px !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+}
+
+#hero .btn-light:hover {
+    background-color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+/* Section dengan Latar Belakang Selingan Krem */
+.bg-light {
+    background-color: #efebe2 !important;
+}
+/* --- Styling Navbar Dinamis (Terang / Gelap) --- */
+.navbar-custom {
+    background-color: #f5f2eb; /* Warna Krem Soft di Mode Cerah */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Warna teks menu & logo di Mode Cerah */
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: #2c3e35 !important; /* Warna Sage Gelap / Hijau Tua */
+    font-weight: 500;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #587d71 !important; /* Hijau Sage saat di-hover */
+}
+
+/* Tombol Mode Dark di Mode Cerah */
+.navbar-custom .btn-outline-light,
+#darkModeToggle {
+    color: #2c3e35;
+    border-color: #2c3e35;
+}
+
+
+/* --- Tampilan Saat Mode Gelap (Dark Mode) --- */
+body.dark-mode .navbar-custom {
+    background-color: #1a231f !important; /* Hijau Gelap Peat / Dark Slate */
+    border-bottom: 1px solid #2e3b35;
+}
+
+/* Warna teks menu & logo saat Mode Gelap */
+body.dark-mode .navbar-custom .navbar-brand,
+body.dark-mode .navbar-custom .nav-link {
+    color: #e2e8e4 !important; /* Teks Putih Soft */
+}
+
+/* Tombol Mode Dark saat Mode Gelap */
+body.dark-mode #darkModeToggle {
+    color: #ffffff;
+    border-color: #ffffff;
 }

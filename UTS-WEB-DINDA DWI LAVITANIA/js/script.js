@@ -38,18 +38,20 @@ document.getElementById('searchProject').addEventListener('keyup', function () {
 });
 
 // 3. Fitur Dark Mode Toggle (Manipulasi DOM)
-const darkModeBtn = document.getElementById('darkModeToggle');
-darkModeBtn.addEventListener('click', function () {
-    document.body.classList.toggle('dark-mode');
-    
-    if (document.body.classList.contains('dark-mode')) {
-        this.innerHTML = '<i class="fa-solid fa-sun"></i> Light';
-        this.classList.replace('btn-outline-light', 'btn-warning');
-    } else {
-        this.innerHTML = '<i class="fa-solid fa-moon"></i> Dark';
-        this.classList.replace('btn-warning', 'btn-outline-light');
-    }
-});
+const darkModeToggle = document.getElementById('darkModeToggle');
+
+if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+        // Ganti teks tombol jika perlu
+        if (document.body.classList.contains('dark-mode')) {
+            darkModeToggle.innerHTML = '☀️ Light';
+        } else {
+            darkModeToggle.innerHTML = '🌙 Dark';
+        }
+    });
+}
 
 // 4. Validasi Form Kontak
 document.getElementById('contactForm').addEventListener('submit', function (e) {
