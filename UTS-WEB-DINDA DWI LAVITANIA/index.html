@@ -264,6 +264,58 @@
     </div>
 </section>
 
+<!-- Kalkulator Estimasi Biaya -->
+<section id="calculator" class="py-5 fade-in-section">
+    <div class="container py-3">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-7">
+                <div class="card shadow-sm border-0 p-4 p-md-5 rounded-4">
+                    <div class="text-center mb-4">
+                        <span class="badge bg-success bg-opacity-15 text-success px-3 py-2 rounded-pill mb-2">🧮 Estimasi Proyek</span>
+                        <h2 class="fw-bold">Kalkulator Estimasi Biaya</h2>
+                        <p class="text-muted small mb-0">Hitung perkiraan biaya pembuatan website sesuai kebutuhanmu.</p>
+                    </div>
+
+                    <form id="calcForm">
+                        <div class="mb-3">
+                            <label for="projectType" class="form-label fw-semibold">Tipe Website</label>
+                            <select class="form-select" id="projectType" required>
+                                <option value="500000">Landing Page (Rp 500.000)</option>
+                                <option value="1200000">Company Profile (Rp 1.200.000)</option>
+                                <option value="2500000">E-Commerce / Custom App (Rp 2.500.000)</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="pageCount" class="form-label fw-semibold">Jumlah Halaman (Rp 100.000 / halaman)</label>
+                            <input type="number" class="form-control" id="pageCount" value="1" min="1" step="1" required>
+                        </div>
+
+                        <fieldset class="mb-4">
+                            <legend class="form-label fw-semibold">Fitur Tambahan</legend>
+                            <div class="form-check">
+                                <input class="form-check-input feature-check" type="checkbox" value="300000" id="featureSEO">
+                                <label class="form-check-label" for="featureSEO">Optimasi SEO Dasar (+Rp 300.000)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input feature-check" type="checkbox" value="400000" id="featureCMS">
+                                <label class="form-check-label" for="featureCMS">Integrasi Admin / CMS (+Rp 400.000)</label>
+                            </div>
+                        </fieldset>
+
+                        <button type="button" class="btn btn-primary w-100 py-2 fw-bold" onclick="calculateTotal()">Hitung Estimasi</button>
+                    </form>
+
+                    <div class="alert alert-success mt-4 mb-0 d-none text-center" id="resultBox" aria-live="polite">
+                        <h3 class="h6 mb-1">Estimasi Total Biaya:</h3>
+                        <p class="h3 fw-bold mb-0" id="totalPrice">Rp 0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
         <!-- Contact Form Section dengan Sentuhan Animasi -->
 <section id="contact" class="py-5 fade-in-section">
     <div class="container py-3">
