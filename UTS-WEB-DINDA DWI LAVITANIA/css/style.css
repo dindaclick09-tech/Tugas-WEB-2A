@@ -82,6 +82,24 @@
     transform: translateY(-3px);
 }
 
+.experience-photo-link {
+    display: block;
+    overflow: hidden;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.experience-photo {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.experience-photo-link:hover .experience-photo {
+    transform: scale(1.04);
+}
+
 /* Kustomisasi Navbar & Tombol Utama */
 .bg-primary {
     background-color: var(--sage-primary) !important;
